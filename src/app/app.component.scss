@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; // 100% of the viewport height
+  width: 100vw; // 100% of the viewport width
+  overflow: hidden; // No scroll bars
+
+  mat-toolbar {
+    flex: 0 0 auto; // Don't shrink or grow, automatic sizing
+  }
+
+  router-outlet {
+    flex: 1 1 auto; // Take the rest of the available space
+    display: flex; // To allow nested flex children
+    overflow: hidden; // No scroll bars in the router outlet
+  }
+}

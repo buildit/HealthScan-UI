@@ -1,0 +1,129 @@
+body, html {
+  margin: 0;
+  height: 100%;
+  overflow: hidden; // Prevent scrolling
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  mat-toolbar {
+    flex: 0 0 auto;
+  }
+
+  router-outlet {
+    flex: 1 1 auto;
+    display: flex;
+    overflow: hidden;
+  }
+}
+
+.scanner-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  ::ng-deep canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 80vh;
+    z-index: 2;
+    object-fit: contain;
+  }
+}
+
+.scanner {
+  &__frame {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__flash-button,
+  &__instructions {
+    position: absolute;
+    z-index: 5;
+    top: 10px;
+    left: 10px;
+  }
+
+  &__instructions {
+    top: 10rem; // Adjust as needed
+    width: 100%;
+    text-align: center;
+    color: white;
+  }
+
+  &__overlay {
+    $top: 40%;
+    $bottom: 65%;
+    $left: 20%;
+    $right: 80%;
+    $border-width: 2px;
+    $border-color: #fff;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    clip-path: polygon(0% 0%, 0% 100%, $left 100%, $left $top, $right $top, $right $bottom, $left $bottom, $left 100%, 100% 100%, 100% 0%);
+    z-index: 2;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc($top - $border-width);
+      left: calc($left - $border-width);
+      right: calc(100% - $right - $border-width);
+      bottom: calc(100% - $bottom - $border-width);
+      border: $border-width solid $border-color;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  &__manual-entry {
+    display: flex;
+    flex: 1 1 auto;
+    gap: 1rem;
+    position: absolute;
+    height: 5rem;
+    bottom: 0;
+    left: auto;
+    background: transparent;
+    z-index: 2;
+    flex-direction: row;
+    align-items: center;
+
+    .example-form-field {
+      flex: 1 1 auto;
+      padding-top: 24px;
+      mat-label {
+        white-space: nowrap;
+      }
+    }
+
+    input[matInput] {
+      //width: 100%;
+    }
+
+    button[mat-icon-button] {
+      margin-left: -5px;
+    }
+  }
+}

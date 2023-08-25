@@ -8,21 +8,32 @@ import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { BarcodeScannerComponent } from './component/barcode-scan/barcode-scanner.component';
+import {BarcodeScannerService} from "./service/barcode-scanner/barcode-scanner.service";
+import {MatIconModule} from "@angular/material/icon";
+import { AppRoutingModule } from './app-routing.module';
+import {RouterOutlet} from "@angular/router";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        BarcodeScannerComponent
     ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatCardModule,
-        MatButtonModule,
-        MatToolbarModule,
-        MatSnackBarModule
-    ],
-    providers: [],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSnackBarModule,
+    MatIconModule,
+    AppRoutingModule,
+    RouterOutlet,
+    MatInputModule
+  ],
+    providers: [BarcodeScannerService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,16 +1,16 @@
 <mat-toolbar color="primary">
-    <span>QR Code Scanner</span>
+    <span>Healthscan | Code Scanner</span>
 </mat-toolbar>
-<div #scanner id="scanner"></div>
+<router-outlet></router-outlet>
 
-<button (click)="startScanning()" color="accent" mat-raised-button>Start Scanning</button>
-<mat-card *ngIf="qrResultString">
-    <mat-card-title>Code Matched</mat-card-title>
-    <mat-card-content>
-        <p>{{ qrResultString }}</p>
-        <p>User Agent: {{ qrCodeMetadata?.userAgent }}</p>
-        <p>Platform: {{ qrCodeMetadata?.platform }}</p>
-        <p>Location: Latitude: {{ qrCodeMetadata?.location?.latitude }},
-            Longitude: {{ qrCodeMetadata?.location?.longitude }}</p>
-    </mat-card-content>
-</mat-card>
+<!--<button (click)="startScanning()" color="accent" mat-raised-button>Start Scanning</button>-->
+<!--<mat-card *ngIf="qrResultString">-->
+<!--    <mat-card-title>Code Matched</mat-card-title>-->
+<!--    <mat-card-content>-->
+<!--        <p>{{ qrResultString }}</p>-->
+<!--        <p>User Agent: {{ qrCodeMetadata?.userAgent }}</p>-->
+<!--        <p>Platform: {{ qrCodeMetadata?.platform }}</p>-->
+<!--        <p>Location: Latitude: {{ qrCodeMetadata?.location?.latitude }},-->
+<!--            Longitude: {{ qrCodeMetadata?.location?.longitude }}</p>-->
+<!--    </mat-card-content>-->
+<!--</mat-card>-->
