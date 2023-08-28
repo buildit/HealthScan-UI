@@ -36,33 +36,15 @@ export class BarcodeScannerService {
 
   onDetected(callback: QuaggaJSResultCallbackFunction): void {
     Quagga.onDetected((result: QuaggaJSResultObject) => {
-      console.log('callback.codeResult', result);
+      Quagga.pause();
 
-      // Check if there's a valid result
+      // Validate the result object and the detected code
       if (result && result.codeResult && result.codeResult.code) {
-        const videoElement = document.querySelector('#scanner-container video');
-        if (videoElement instanceof HTMLVideoElement) {
-          videoElement.pause();
-        }
-
-        // Pause processing to freeze the frame
-        Quagga.pause();
-        //
-        // const drawingCtx = Quagga.canvas.ctx.overlay,
-        //   drawingCanvas = Quagga.canvas.dom.overlay;
-        //
-        // // Clear previous drawings
-        // if (drawingCanvas.getAttribute("width") && drawingCanvas.getAttribute("height")) {
-        //   const width = parseInt(drawingCanvas.getAttribute("width")!, 10);
-        //   const height = parseInt(drawingCanvas.getAttribute("height")!, 10);
-        //   drawingCtx.clearRect(0, 0, width, height);
-        // }
-        //
-        // // Draw the result line
-        // Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
+        console.log('Detected code:', result.codeResult.code);
+        callback(result);
+      } else {
+        Quagga.start();
       }
-
-      return result;
     });
   }
 
@@ -70,6 +52,7 @@ export class BarcodeScannerService {
   stop(): void {
     if (this.started) {
       Quagga.offDetected();
+      Quagga.stop();
       this.started = false;
     }
   }

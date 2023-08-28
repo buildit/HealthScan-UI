@@ -1,0 +1,31 @@
+<form (submit)="submitForm()" [formGroup]="wasteDisposalKitForm">
+  <mat-form-field>
+    <mat-label>Barcode</mat-label>
+    <input formControlName="barcode" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Category</mat-label>
+    <input formControlName="category" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Kit Type</mat-label>
+    <input formControlName="kitType" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Disposal Instructions</mat-label>
+    <input formControlName="disposalInstructions" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Handling Warnings</mat-label>
+    <input formControlName="handlingWarnings" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Tracking Number</mat-label>
+    <input formControlName="trackingNumber" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Status</mat-label>
+    <input formControlName="status" matInput>
+  </mat-form-field>
+  <button mat-raised-button type="submit">Submit</button>
+</form>

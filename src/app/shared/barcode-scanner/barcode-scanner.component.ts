@@ -1,6 +1,6 @@
 import {AfterViewInit, ChangeDetectorRef, Component, EventEmitter, OnDestroy, Output} from '@angular/core';
-import {BarcodeScannerService} from "../../service/barcode-scanner/barcode-scanner.service";
-import Quagga, {QuaggaJSResultObject} from "@ericblade/quagga2";
+import {BarcodeScannerService} from "./service/barcode-scanner.service";
+import {QuaggaJSResultObject} from "@ericblade/quagga2";
 
 @Component({
   selector: 'app-barcode-scanner',
@@ -13,7 +13,8 @@ export class BarcodeScannerComponent implements AfterViewInit, OnDestroy {
   lastScannedCode: string | null = null;
   torchEnabled: boolean = false;
 
-  @Output() barcodeScanned = new EventEmitter<string | null>();
+  @Output() barcode = new EventEmitter<string | null>();
+  @Output() manualEntry = new EventEmitter<void>();
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
@@ -27,21 +28,13 @@ export class BarcodeScannerComponent implements AfterViewInit, OnDestroy {
 
   toggleTorch(): void {
     this.torchEnabled = !this.torchEnabled;
-    const activeCameraTrack = Quagga.CameraAccess.getActiveTrack();
     console.warn('torch not implemented yet');
-    // activeCameraTrack?.applyConstraints({
-    //   advanced: [{ torch: this.torchEnabled }]
-    // });
-  }
-
-  onManualBarcodeEntered(value: string): void {
-    console.warn('manual barcode entry not implemented yet');
   }
 
   onBarcodeScanned(resultObject: QuaggaJSResultObject) {
     this.lastScannedCode = resultObject.codeResult.code;
     this.changeDetectorRef.detectChanges();
-    this.barcodeScanned.emit(resultObject.codeResult.code); // Emitting the scanned code
+    this.barcode.emit(resultObject.codeResult.code); // Emitting the scanned code
   }
 
   ngOnDestroy() {
@@ -49,7 +42,7 @@ export class BarcodeScannerComponent implements AfterViewInit, OnDestroy {
   }
 
   private initializeScanner(): void {
-    const constraints: MediaTrackConstraints = {facingMode: 'environment'};
+    const constraints: MediaTrackConstraints = {facingMode: '',};
 
     this.barcodeScannerService.initialize(constraints)
       .then(() => {
@@ -64,6 +57,4 @@ export class BarcodeScannerComponent implements AfterViewInit, OnDestroy {
         this.started = false;
       });
   }
-
-
 }

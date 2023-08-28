@@ -1,5 +1,3 @@
-import {HealthscanGatewayService} from "./healthscan-gateway.service";
-
 export interface HealthscanGatewayResponseWrapper {
   status: string
   data: HealthscanGatewayDataResponse

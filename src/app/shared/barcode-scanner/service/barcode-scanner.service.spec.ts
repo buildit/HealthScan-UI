@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { BarcodeScannerService } from './barcode-scanner.service';
+import {BarcodeScannerService} from './barcode-scanner.service';
 
 describe('BarcodeScannerService', () => {
   let service: BarcodeScannerService;

@@ -1,7 +1,10 @@
 <mat-toolbar color="primary">
-    <span>Healthscan | Code Scanner</span>
+  <span>Healthscan | Code Scanner</span>
 </mat-toolbar>
-<router-outlet></router-outlet>
+<div class="router-outlet-wrapper">
+  <router-outlet></router-outlet>
+</div>
+
 
 <!--<button (click)="startScanning()" color="accent" mat-raised-button>Start Scanning</button>-->
 <!--<mat-card *ngIf="qrResultString">-->

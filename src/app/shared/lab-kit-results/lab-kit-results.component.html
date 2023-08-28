@@ -1,0 +1,50 @@
+<form (submit)="submitForm()" [formGroup]="labKitForm">
+  <!-- BarcodeItem Group -->
+  <div formGroupName="barcodeItem">
+    <mat-form-field>
+      <mat-label>Barcode</mat-label>
+      <input formControlName="barcode" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <input formControlName="category" matInput>
+    </mat-form-field>
+  </div>
+
+  <!-- Kit Name -->
+  <mat-form-field>
+    <mat-label>Kit Name</mat-label>
+    <input formControlName="kitName" matInput>
+  </mat-form-field>
+
+  <!-- Components Array -->
+  <div formArrayName="components">
+    <div *ngFor="let component of labKitForm.get('components')?.value; let i = index">
+      <mat-form-field>
+        <mat-label>Component {{i + 1}}</mat-label>
+        <input [formControlName]="i" matInput>
+      </mat-form-field>
+    </div>
+    <!-- Add/Remove buttons for components can be added here -->
+  </div>
+
+  <!-- Instructions -->
+  <mat-form-field>
+    <mat-label>Instructions</mat-label>
+    <input formControlName="instructions" matInput>
+  </mat-form-field>
+
+  <!-- Manufacturer -->
+  <mat-form-field>
+    <mat-label>Manufacturer</mat-label>
+    <input formControlName="manufacturer" matInput>
+  </mat-form-field>
+
+  <!-- Intended Use -->
+  <mat-form-field>
+    <mat-label>Intended Use</mat-label>
+    <input formControlName="intendedUse" matInput>
+  </mat-form-field>
+
+  <button mat-raised-button type="submit">Submit</button>
+</form>

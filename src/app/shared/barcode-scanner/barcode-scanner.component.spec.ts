@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BarcodeScannerComponent } from './barcode-scanner.component';
+import {BarcodeScannerComponent} from './barcode-scanner.component';
 
 describe('BarcodeScanComponent', () => {
   let component: BarcodeScannerComponent;

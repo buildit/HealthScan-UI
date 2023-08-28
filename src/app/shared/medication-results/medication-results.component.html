@@ -1,0 +1,27 @@
+<form (submit)="submitForm()" [formGroup]="medicationForm">
+  <mat-form-field>
+    <mat-label>Barcode</mat-label>
+    <input formControlName="barcode" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Category</mat-label>
+    <input formControlName="category" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Medicine Name</mat-label>
+    <input formControlName="medicineName" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Dosage</mat-label>
+    <input formControlName="dosage" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Expiration Date</mat-label>
+    <input formControlName="expirationDate" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Manufacturer</mat-label>
+    <input formControlName="manufacturer" matInput>
+  </mat-form-field>
+  <button mat-raised-button type="submit">Submit</button>
+</form>
