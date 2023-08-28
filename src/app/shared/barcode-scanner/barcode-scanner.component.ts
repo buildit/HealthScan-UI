@@ -1,6 +1,6 @@
 import {AfterViewInit, ChangeDetectorRef, Component, EventEmitter, OnDestroy, Output} from '@angular/core';
 import {BarcodeScannerService} from "./service/barcode-scanner.service";
-import {QuaggaJSResultObject} from "@ericblade/quagga2";
+import Quagga, {QuaggaJSResultObject} from "@ericblade/quagga2";
 
 @Component({
   selector: 'app-barcode-scanner',
@@ -28,7 +28,11 @@ export class BarcodeScannerComponent implements AfterViewInit, OnDestroy {
 
   toggleTorch(): void {
     this.torchEnabled = !this.torchEnabled;
-    console.warn('torch not implemented yet');
+    if(this.torchEnabled) {
+      Quagga.CameraAccess.enableTorch();
+    } else {
+      Quagga.CameraAccess.disableTorch();
+    }
   }
 
   onBarcodeScanned(resultObject: QuaggaJSResultObject) {
