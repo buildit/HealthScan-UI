@@ -1,12 +1,14 @@
-<form (submit)="submitForm()" [formGroup]="wasteDisposalKitForm">
-  <mat-form-field>
-    <mat-label>Barcode</mat-label>
-    <input formControlName="barcode" matInput>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Category</mat-label>
-    <input formControlName="category" matInput>
-  </mat-form-field>
+<form (submit)="submitForm()" [formGroup]="formModel">
+  <div formGroupName="barcodeItem">
+    <mat-form-field>
+      <mat-label>Barcode</mat-label>
+      <input formControlName="barcode" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <input formControlName="category" matInput>
+    </mat-form-field>
+  </div>
   <mat-form-field>
     <mat-label>Kit Type</mat-label>
     <input formControlName="kitType" matInput>

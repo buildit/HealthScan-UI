@@ -43,7 +43,6 @@ body, html {
   }
 
   &__flash-button,
-  &__manual-entry-button,
   &__instructions {
     position: absolute;
     z-index: 5;
@@ -51,12 +50,34 @@ body, html {
     left: 10px;
   }
 
+  &__flash-button {
+
+  }
+
+  &__flash-button.torch-on {
+    background: radial-gradient(circle, rgba(255, 255, 0, 1), rgba(255, 255, 0, 0.8), rgba(255, 255, 0, 0));
+    box-shadow: 0 0 5px #FFFF00,
+    0 0 10px #FFFF00,
+    0 0 20px #FFAA00,
+    0 0 30px #FFAA00,
+    0 0 40px #FFAA00;
+    border: 1px solid #FFFF00;
+
+  }
+
   &__manual-entry-button {
-    top: 65px;
+    position: absolute;
+    bottom: 20px; /* Set bottom to 0 */
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
+    z-index: 6; /* Make sure it is above other elements */
   }
 
   &__instructions {
-    top: 9rem;
+    z-index: 6;
+    top: calc(50% - 27vh);
+    left: 0; /* Horizontal centering */
+    right: 0; /* Horizontal centering */
     width: 100%;
     text-align: center;
     color: white;

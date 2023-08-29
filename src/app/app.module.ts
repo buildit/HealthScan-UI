@@ -22,11 +22,11 @@ import {RequestSubmittedComponent} from './page/request-submitted/request-submit
 import {MatSelectModule} from "@angular/material/select";
 import {ManualBarcodeEntryComponent} from './page/manual-barcode-entry/manual-barcode-entry.component';
 import {MatListModule} from "@angular/material/list";
-import {MedicationResultsComponent} from './shared/medication-results/medication-results.component';
+import {MedicationResultsComponent} from './page/results/medication-results/medication-results.component';
 import {
   WasteDisposalKitResultsComponent
-} from './shared/waste-disposal-kit-results/waste-disposal-kit-results.component';
-import {LabKitResultsComponent} from './shared/lab-kit-results/lab-kit-results.component';
+} from './page/results/waste-disposal-kit-results/waste-disposal-kit-results.component';
+import {LabKitResultsComponent} from './page/results/lab-kit-results/lab-kit-results.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import {LabKitResultsComponent} from './shared/lab-kit-results/lab-kit-results.c
     ManualBarcodeEntryComponent,
     MedicationResultsComponent,
     WasteDisposalKitResultsComponent,
-    LabKitResultsComponent,
+    LabKitResultsComponent
   ],
   imports: [
     BrowserModule,

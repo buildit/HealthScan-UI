@@ -8,9 +8,9 @@ import {SelectBarcodeCategoryComponent} from "./page/select-barcode-category/sel
 import {ManualBarcodeEntryComponent} from "./page/manual-barcode-entry/manual-barcode-entry.component";
 import {
   WasteDisposalKitResultsComponent
-} from "./shared/waste-disposal-kit-results/waste-disposal-kit-results.component";
-import {MedicationResultsComponent} from "./shared/medication-results/medication-results.component";
-import {LabKitResultsComponent} from "./shared/lab-kit-results/lab-kit-results.component";
+} from "./page/results/waste-disposal-kit-results/waste-disposal-kit-results.component";
+import {MedicationResultsComponent} from "./page/results/medication-results/medication-results.component";
+import {LabKitResultsComponent} from "./page/results/lab-kit-results/lab-kit-results.component";
 
 
 const routes: Routes = [
@@ -18,9 +18,9 @@ const routes: Routes = [
   {path: 'select-barcode-category', component: SelectBarcodeCategoryComponent},
   {path: 'scan/:barcodeCategory', component: ScanBarcodeComponent},
   {path: 'scan/:barcodeCategory/manual-entry', component: ManualBarcodeEntryComponent},
-  {path: 'scan-results/medications/:barcode', component: MedicationResultsComponent},
-  {path: 'scan-results/lab-kits/:barcode', component: LabKitResultsComponent},
-  {path: 'scan-results/waste-disposal-kits/:barcode', component: WasteDisposalKitResultsComponent},
+  {path: 'scan-results/medication/:barcode', component: MedicationResultsComponent},
+  {path: 'scan-results/lab-kit/:barcode', component: LabKitResultsComponent},
+  {path: 'scan-results/waste-disposal-kit/:barcode', component: WasteDisposalKitResultsComponent},
   {path: 'submit-request/:barcodeCategory/:barcode', component: SubmitRequestComponent},
   {path: 'request-submitted', component: RequestSubmittedComponent}
 ];

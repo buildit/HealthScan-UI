@@ -1,4 +1,4 @@
-<form (submit)="submitForm()" [formGroup]="labKitForm">
+<form (submit)="submitForm()" [formGroup]="formModel">
   <!-- BarcodeItem Group -->
   <div formGroupName="barcodeItem">
     <mat-form-field>
@@ -19,13 +19,14 @@
 
   <!-- Components Array -->
   <div formArrayName="components">
-    <div *ngFor="let component of labKitForm.get('components')?.value; let i = index">
+    <div *ngFor="let component of formModel.get('components')?.value; let i = index">
       <mat-form-field>
         <mat-label>Component {{i + 1}}</mat-label>
         <input [formControlName]="i" matInput>
       </mat-form-field>
+      <button (click)="removeComponent(i)" mat-button>Remove</button>
     </div>
-    <!-- Add/Remove buttons for components can be added here -->
+    <button (click)="addComponent()" mat-button>Add Component</button>
   </div>
 
   <!-- Instructions -->

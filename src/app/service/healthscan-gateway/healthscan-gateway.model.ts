@@ -1,6 +1,8 @@
-export interface HealthscanGatewayResponseWrapper {
+import {BarcodeCategory} from "../../model/Barcode.model";
+
+export interface HealthscanGatewayResponseWrapper<T> {
   status: string
-  data: HealthscanGatewayDataResponse
+  data: T
   message: string
 }
 
@@ -9,7 +11,8 @@ export interface HealthscanGatewayDataResponse {
   confirmationCode: string
 }
 
-export interface HealthscanGatewayRequest {
+export interface HealthscanGatewayRequest<T> {
   barcode: string;
   category: BarcodeCategory;
+  data?: T;
 }

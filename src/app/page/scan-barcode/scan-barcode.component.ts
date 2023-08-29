@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {BarcodeCategory} from "../../model/Barcode.model";
 
 @Component({
   selector: 'app-scan-barcode',
@@ -7,14 +8,14 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./scan-barcode.component.scss']
 })
 export class ScanBarcodeComponent implements OnInit {
-  barcodeCategory: string | null = null;
+  barcodeCategory: BarcodeCategory | null = null;
 
   constructor(private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.barcodeCategory = params.get('barcodeCategory');
+      this.barcodeCategory = params.get('barcodeCategory') as BarcodeCategory;
     });
   }
 

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
+import {BarcodeCategory} from "../../model/Barcode.model";
 
 @Component({
   selector: 'app-manual-barcode-entry',
@@ -10,7 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class ManualBarcodeEntryComponent implements OnInit {
 
   barcodeForm: FormGroup;
-  barcodeCategory: string | null = null;
+  barcodeCategory: BarcodeCategory | null = null;
 
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private router: Router) {
     this.barcodeForm = this.fb.group({
@@ -20,7 +21,7 @@ export class ManualBarcodeEntryComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.barcodeCategory = params.get('barcodeCategory');
+      this.barcodeCategory = params.get('barcodeCategory') as BarcodeCategory
     });
   }
 
