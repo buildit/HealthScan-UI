@@ -1,0 +1,15 @@
+<div class="manual-barcode-entry">
+  <form [formGroup]="barcodeForm">
+    <mat-form-field class="manual-barcode-entry__field">
+      <mat-label>Enter Barcode</mat-label>
+      <input formControlName="barcode" matInput>
+      <mat-error *ngIf="barcodeForm.get('barcode')?.invalid && barcodeForm.get('barcode')?.touched">
+        Barcode is required
+      </mat-error>
+    </mat-form-field>
+    <button (click)="submitBarcode()" [disabled]="barcodeForm.invalid" class="manual-barcode-entry__button"
+            mat-raised-button>
+      Submit
+    </button>
+  </form>
+</div>
