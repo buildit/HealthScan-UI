@@ -1,0 +1,21 @@
+<div class="scanner-container" id="scanner-container">
+  <div class="scanner__frame">
+    <button (click)="toggleTorch()"
+            [ngClass]="{'torch-on': torchEnabled}"
+            class="scanner__flash-button"
+            color="primary"
+            mat-mini-fab>
+      <mat-icon>flash_on</mat-icon>
+    </button>
+    <div class="scanner__instructions">
+      <strong>Scan Barcode</strong><br/>
+      <em>keep the barcode in the frame to scan it.</em>
+    </div>
+    <video autoplay="true" muted="true" playsinline="true" preload="auto" src=""></video>
+    <div class="scanner__overlay"></div>
+    <canvas class="scanner__canvas"></canvas>
+    <button (click)="manualEntry.emit()" class="scanner__manual-entry-button" color="primary" mat-raised-button>
+      Can't scan barcode?
+    </button>
+  </div>
+</div>
