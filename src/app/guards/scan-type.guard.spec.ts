@@ -1,11 +1,11 @@
-import { TestBed } from '@angular/core/testing';
-import { CanActivateFn } from '@angular/router';
+import {TestBed} from '@angular/core/testing';
+import {CanActivateFn} from '@angular/router';
 
-import { scanTypeGuard } from './scan-type.guard';
+import {scanTypeGuard} from './scan-type.guard';
 
 describe('scanTypeGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => scanTypeGuard(...guardParameters));
+  const executeGuard: CanActivateFn = (...guardParameters) =>
+    TestBed.runInInjectionContext(() => scanTypeGuard(...guardParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

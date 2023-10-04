@@ -1,11 +1,11 @@
-import { TestBed } from '@angular/core/testing';
-import { CanActivateFn } from '@angular/router';
+import {TestBed} from '@angular/core/testing';
+import {CanActivateFn} from '@angular/router';
 
-import { memberIdGuard } from './member-id.guard';
+import {memberIdGuard} from './member-id.guard';
 
 describe('memberIdGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => memberIdGuard(...guardParameters));
+  const executeGuard: CanActivateFn = (...guardParameters) =>
+    TestBed.runInInjectionContext(() => memberIdGuard(...guardParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

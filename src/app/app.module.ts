@@ -14,19 +14,19 @@ import {MatLineModule} from "@angular/material/core";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
-import { AppRoutingModule } from './app-routing.module';
-import { ScanComponent } from './pages/scan/scan.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { ResultComponent } from './pages/result/result.component';
+import {AppRoutingModule} from './app-routing.module';
+import {ScanComponent} from './pages/scan/scan.component';
+import {NotFoundComponent} from './pages/not-found/not-found.component';
+import {ResultComponent} from './pages/result/result.component';
 import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        ScanComponent,
-        NotFoundComponent,
-        ResultComponent
-    ],
+  declarations: [
+    AppComponent,
+    ScanComponent,
+    NotFoundComponent,
+    ResultComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -44,8 +44,8 @@ import {MatIconModule} from "@angular/material/icon";
     AppRoutingModule,
     MatIconModule
   ],
-    providers: [],
-    bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

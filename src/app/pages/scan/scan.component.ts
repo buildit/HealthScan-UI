@@ -15,18 +15,17 @@ export class ScanComponent implements OnInit {
   form: FormGroup;
   enable = false;
   indvId!: string;
-  private scanType!: ScanType;
   scanTypePretty!: string;
   flashEnabled = false;
+  devices: Array<MediaDeviceInfo> = [];
+  device: MediaDeviceInfo | undefined = undefined;
+  private scanType!: ScanType;
 
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private router: Router) {
     this.form = this.fb.group({
       cameraSelect: [''],
     });
   }
-
-  devices: Array<MediaDeviceInfo> = [];
-  device: MediaDeviceInfo | undefined = undefined;
 
   ngOnInit(): void {
     this.indvId = this.route.snapshot.params['indvId'];

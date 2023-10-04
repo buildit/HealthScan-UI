@@ -9,9 +9,10 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ResultComponent implements OnInit {
   indvId!: string;
-  private scanType!: ScanType;
   scanTypePretty!: string;
   barcode!: string;
+  protected readonly window = window;
+  private scanType!: ScanType;
 
   constructor(private route: ActivatedRoute) {
   }
@@ -24,6 +25,4 @@ export class ResultComponent implements OnInit {
       this.scanTypePretty = ScanTypeMap[this.scanType];
     }
   }
-
-  protected readonly window = window;
 }
