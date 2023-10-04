@@ -1,11 +1,7 @@
-//<<<<<<< tabano/revamp
-import {Component} from '@angular/core';
-//=======
-//import {Component, ElementRef, ViewChild} from '@angular/core';
-//import {HttpClient} from '@angular/common/http';
-//import {Html5QrcodeScanner} from 'html5-qrcode';
-//import {MatSnackBar} from "@angular/material/snack-bar";
-//>>>>>>> main
+import {Component, ElementRef, ViewChild} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Html5QrcodeScanner} from 'html5-qrcode';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-root',
@@ -13,18 +9,15 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-//<<<<<<< tabano/revamp
+  @ViewChild('scanner') scannerElement!: ElementRef;
+  qrResultString: string | null = null;
+  deviceLocation: any;
+  qrCodeMetadata: any | null = null;
 
-//=======
-//  @ViewChild('scanner') scannerElement!: ElementRef;
-//  qrResultString: string | null = null;
-//  deviceLocation: any;
-//  qrCodeMetadata: any | null = null;
+  private html5QrcodeScanner!: Html5QrcodeScanner;
 
-//  private html5QrcodeScanner!: Html5QrcodeScanner;
-
-//  constructor(private http: HttpClient, private snackBar: MatSnackBar) {
-//  }
+  constructor(private http: HttpClient, private snackBar: MatSnackBar) {
+  }
 
   //
   // ngAfterViewInit() {
@@ -66,10 +59,9 @@ export class AppComponent {
   //     this.html5QrcodeScanner.render(onScanSuccess, onScanError);
   // }
 
-//  openSnackBar(message: string, action: string) {
-//    this.snackBar.open(message, action, {
-//      duration: 2000,
- //   });
- // }
-//>>>>>>> main
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
 }
