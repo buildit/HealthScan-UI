@@ -20,18 +20,29 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+//<<<<<<< tabano/revamp
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0",
     "@zxing/browser": "^0.1.4",
     "@zxing/library": "^0.20.0",
     "@zxing/ngx-scanner": "^16.1.0"
+//=======
+//    "@ericblade/quagga2": "1.8.2",
+//    "html5-qrcode": "^2.3.8",
+//    "rxjs": "~7.8.0",
+//    "tslib": "^2.3.0",
+//    "uuid": "9.0.0",
+//    "zone.js": "~0.13.0"
+//>>>>>>> main
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.0",
     "@angular/cli": "~16.2.0",
     "@angular/compiler-cli": "^16.2.0",
     "@types/jasmine": "~4.3.0",
+    "@types/node": "20.5.6",
+    "@types/uuid": "9.0.2",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

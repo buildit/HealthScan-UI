@@ -1,7 +1,26 @@
+/*<<<<<<< tabano/revamp*/
 button {
     margin: 15px;
 }
 
 mat-card {
     margin: 15px;
+/*=======*/
+/*body, html {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*}*/
+
+/*mat-toolbar {*/
+/*  flex: 0 0 auto;*/
+/*}*/
+
+/*.router-outlet-wrapper {*/
+/*  flex: 1 1 auto;*/
+/*  padding: 1.2rem; // or you can use margin: 1.2rem; based on what you need*/
+/*>>>>>>> main */
 }
