@@ -1,0 +1,34 @@
+<mat-toolbar style="display: flex; flex-direction: column; align-items: flex-start">
+  <span style="font-size: 12px">Member ID: {{indvId}}</span>
+  <span style="font-size: 12px">Type: {{scanTypePretty}}</span>
+</mat-toolbar>
+
+<div style="position:relative;">
+  <zxing-scanner (scanSuccess)="onScanSuccess($event)"
+                 [enable]="enable"
+                 [autofocusEnabled]="true"
+                 (scanComplete)="onScanComplete($event)"
+                 (camerasFound)="onCamerasFound($event)"
+                 [device]="device"
+                 [torch]="flashEnabled"
+                 [formats]="barcodeFormat">
+  </zxing-scanner>
+  <div style="border:2px solid red; position:absolute; width:50%; height:50%; top:25%; left:25%;">
+    <!-- This is the red box -->
+  </div>
+  <button mat-fab color="warn" style="position: absolute; top: 1rem; right: 1rem;" (click)="flashEnabled = !flashEnabled">
+    <mat-icon *ngIf="flashEnabled" (click)="flashEnabled = !flashEnabled">flash_on</mat-icon>
+    <mat-icon *ngIf="!flashEnabled" (click)="flashEnabled = !flashEnabled">flash_off</mat-icon>
+  </button>
+</div>
+
+<div [formGroup]="form">
+  <mat-form-field [formGroup]="form" style="width: 100%">
+    <mat-label>Camera Select</mat-label>
+    <mat-select (selectionChange)="onDeviceSelectionChange($event)" formControlName="cameraSelect">
+      <mat-option *ngFor="let _device of devices" [value]="_device">
+        {{_device.label}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
